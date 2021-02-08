@@ -46,10 +46,11 @@ namespace TicTacToe
                 {buttonRow2Column0, buttonRow2Column1, buttonRow2Column2 }
 
             };
+            ClearControls(squares);
         }
 
         #region "Event Handlers"
-        
+
         /// <summary>
         /// When a button is clicked, assign it a letter, disable the button, and if there was no winner change the turn
         /// </summary>
@@ -108,10 +109,12 @@ namespace TicTacToe
         /// <param name="controlArray">An array of controls with a text property to clear</param>
         private void ClearControls(Control[,] controlArray)
         {
-            // For every control in the list that is passed in, empty its text property.
+            // For every control in the list that is passed in, empty its text property and change colour to default.
             foreach (Control controlToClear in controlArray)
             {
                 controlToClear.Text = String.Empty;
+                controlToClear.BackColor = Button.DefaultBackColor;
+
             }
         }
 
@@ -177,17 +180,37 @@ namespace TicTacToe
         // have the same value - doesn't even matter what the value is
         // as long as it's the same!
         
-            for (int rowCount = 0; rowCount < squares.GetUpperBound(0); rowCount++)
+            for (int index = 0; index <= squares.GetUpperBound(0); index++)
             {
-                // What does "GetUpperBound(0)" mean above?
+                // Checks a row based on the current index of dimension 1 for the same character
+                if (squares[index, 0].Text != String.Empty &&
+                    squares[index, 0].Text == squares[index, 1].Text &&
+                    squares[index, 0].Text == squares[index, 2].Text)
+                {
+                    // Decalare a winner
+                    isWinner = true;
+                    // Highlight the winning line
+                    squares[index, 0].BackColor = Color.Green;
+                    squares[index, 1].BackColor = Color.Green;
+                    squares[index, 2].BackColor = Color.Green;
+                }
 
-                // Something to do with squares(rowCount,0), squares(rowCount,1), etc.
-                // How can we analyze the rows to figure out if someone wins?
-                // When someone wins, set isWinner = true;.
+                // Checks a column based on the current index of dimension 2 for the same character
+                if (squares[0, index].Text != String.Empty &&
+                    squares[0, index].Text == squares[1, index].Text &&
+                    squares[0, index].Text == squares[2, index].Text)
+                {
+                    // Decalare a winner
+                    isWinner = true;
+
+                    // Highlight the winning line
+                    squares[0, index].BackColor = Color.Green;
+                    squares[1, index].BackColor = Color.Green;
+                    squares[2, index].BackColor = Color.Green;
+                }
+
             }
 
-            // Next, check all columns. This will be done pretty much the same way as the rows.
-            
             // Finally, we have to check the two diagonals.
             // It is not going to save us any work to use loops
             // so let's just do it like this:
@@ -196,12 +219,20 @@ namespace TicTacToe
                 squares[0, 0].Text == squares[2, 2].Text)
             {
                 isWinner = true;
+                // Highlight the winning line
+                squares[0, 0].BackColor = Color.Green;
+                squares[1, 1].BackColor = Color.Green;
+                squares[2, 2].BackColor = Color.Green;
             }
             else if(squares[0, 2].Text != String.Empty &&
                 squares[0, 2].Text == squares[1, 1].Text &&
                 squares[0, 2].Text == squares[2, 0].Text)
             {
                 isWinner = true;
+                // Highlight the winning line
+                squares[0, 2].BackColor = Color.Green;
+                squares[1, 1].BackColor = Color.Green;
+                squares[2, 0].BackColor = Color.Green;
             }
 
             // **************************************************
