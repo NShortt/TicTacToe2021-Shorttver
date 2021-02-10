@@ -43,9 +43,10 @@ namespace TicTacToe
             // When the form is loaded, assign the Buttons to the array.
             squares = new Button[,]
             {
-                   {buttonRow0Column0,buttonRow0Column1, buttonRow0Column2 },
-                {buttonRow1Column0, buttonRow1Column1, buttonRow1Column2 },
-                {buttonRow2Column0, buttonRow2Column1, buttonRow2Column2 }
+                   {buttonRow0Column0,buttonRow0Column1, buttonRow0Column2, buttonRow0Column3 },
+                {buttonRow1Column0, buttonRow1Column1, buttonRow1Column2, buttonRow1Column3 },
+                {buttonRow2Column0, buttonRow2Column1, buttonRow2Column2, buttonRow2Column3 },
+                {buttonRow3Column0, buttonRow3Column1, buttonRow3Column2, buttonRow3Column3 }
 
             };
             ClearControls(squares);
@@ -197,7 +198,8 @@ namespace TicTacToe
                 // Checks a row based on the current index of dimension 1 for the same character
                 if (squares[index, 0].Text != String.Empty &&
                     squares[index, 0].Text == squares[index, 1].Text &&
-                    squares[index, 0].Text == squares[index, 2].Text)
+                    squares[index, 0].Text == squares[index, 2].Text &&
+                    squares[index, 0].Text == squares[index, 3].Text)
                 {
                     // Decalare a winner
                     isWinner = true;
@@ -205,12 +207,14 @@ namespace TicTacToe
                     squares[index, 0].BackColor = Color.Green;
                     squares[index, 1].BackColor = Color.Green;
                     squares[index, 2].BackColor = Color.Green;
+                    squares[index, 3].BackColor = Color.Green;
                 }
 
                 // Checks a column based on the current index of dimension 2 for the same character
                 if (squares[0, index].Text != String.Empty &&
                     squares[0, index].Text == squares[1, index].Text &&
-                    squares[0, index].Text == squares[2, index].Text)
+                    squares[0, index].Text == squares[2, index].Text &&
+                    squares[0, index].Text == squares[3, index].Text)
                 {
                     // Decalare a winner
                     isWinner = true;
@@ -219,6 +223,7 @@ namespace TicTacToe
                     squares[0, index].BackColor = Color.Green;
                     squares[1, index].BackColor = Color.Green;
                     squares[2, index].BackColor = Color.Green;
+                    squares[3, index].BackColor = Color.Green;
                 }
 
             }
@@ -228,23 +233,29 @@ namespace TicTacToe
             // so let's just do it like this:
             if (squares[0, 0].Text != String.Empty &&
                 squares[0, 0].Text == squares[1, 1].Text &&
-                squares[0, 0].Text == squares[2, 2].Text)
+                squares[0, 0].Text == squares[2, 2].Text &&
+                squares[0, 0].Text == squares[3, 3].Text)
             {
                 isWinner = true;
                 // Highlight the winning line
                 squares[0, 0].BackColor = Color.Green;
                 squares[1, 1].BackColor = Color.Green;
                 squares[2, 2].BackColor = Color.Green;
+                squares[3, 3].BackColor = Color.Green;
+
             }
-            else if(squares[0, 2].Text != String.Empty &&
-                squares[0, 2].Text == squares[1, 1].Text &&
-                squares[0, 2].Text == squares[2, 0].Text)
+            else if(squares[0, 3].Text != String.Empty &&
+                squares[0, 3].Text == squares[1, 2].Text &&
+                squares[0, 3].Text == squares[2, 1].Text &&
+                squares[0, 3].Text == squares[3, 0].Text)
             {
                 isWinner = true;
                 // Highlight the winning line
-                squares[0, 2].BackColor = Color.Green;
-                squares[1, 1].BackColor = Color.Green;
-                squares[2, 0].BackColor = Color.Green;
+                squares[0, 3].BackColor = Color.Green;
+                squares[1, 2].BackColor = Color.Green;
+                squares[2, 1].BackColor = Color.Green;
+                squares[3, 0].BackColor = Color.Green;
+
             }
 
             // **************************************************
@@ -295,20 +306,20 @@ namespace TicTacToe
         /// </summary>
         private void EvaluteTie()
         {
+            // Set tie game to being true
             isTie = true;
             // Check all the squares
-            for (int index = 0; index <= squares.GetUpperBound(0); index++)
+            for (int row = 0; row <= squares.GetUpperBound(0); row++)
             {
-                // If one sqaure is still empty the game is not tied
-                if (squares[index, 0].Text == String.Empty ||
-                    squares[index, 1].Text == String.Empty ||
-                    squares[index, 2].Text == String.Empty)
+                for (int col = 0; col <= squares.GetUpperBound(1); col++)
                 {
-                    isTie = false;
-                }
+                    // If one sqaure is still empty the game is not tied
+                    if (squares[row, col].Text == String.Empty)
+                        isTie = false;
+                }                  
             }
 
-            // If the game is tied show it
+            // If the game is still tied show it
             if (isTie)
             {
                 labelGameStatus.Text = "Tie game.";
@@ -316,6 +327,5 @@ namespace TicTacToe
         }
 
         #endregion
-
     }
 }
