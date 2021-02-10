@@ -272,7 +272,7 @@ namespace TicTacToe
             // Make this generate a relevant message when the game is a draw/tie game! (cat game?) (Complete)
 
             // 3) If you want to get *super* fancy...
-            // Could you make a 4x4 board? Or a 5x5 board?
+            // Could you make a 4x4 board? Or a 5x5 board? (Complete)
 
             // 4) If you like efficiency...
             // How could you do everything in the EvaluateWin() function within a single loop? (Completed)
