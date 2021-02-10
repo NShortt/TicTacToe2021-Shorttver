@@ -44,99 +44,110 @@ namespace TicTacToe
             // 
             // labelGameStatus
             // 
-            this.labelGameStatus.Location = new System.Drawing.Point(14, 24);
+            this.labelGameStatus.Location = new System.Drawing.Point(21, 36);
+            this.labelGameStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelGameStatus.Name = "labelGameStatus";
-            this.labelGameStatus.Size = new System.Drawing.Size(164, 23);
+            this.labelGameStatus.Size = new System.Drawing.Size(246, 34);
             this.labelGameStatus.TabIndex = 0;
             this.labelGameStatus.Text = "X\'s Turn";
             this.labelGameStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonRow0Column0
             // 
-            this.buttonRow0Column0.Location = new System.Drawing.Point(14, 50);
+            this.buttonRow0Column0.Location = new System.Drawing.Point(21, 75);
+            this.buttonRow0Column0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRow0Column0.Name = "buttonRow0Column0";
-            this.buttonRow0Column0.Size = new System.Drawing.Size(50, 50);
+            this.buttonRow0Column0.Size = new System.Drawing.Size(75, 75);
             this.buttonRow0Column0.TabIndex = 1;
             this.buttonRow0Column0.UseVisualStyleBackColor = true;
             this.buttonRow0Column0.Click += new System.EventHandler(this.TicTacToeSquareClick);
             // 
             // buttonRow0Column1
             // 
-            this.buttonRow0Column1.Location = new System.Drawing.Point(71, 50);
+            this.buttonRow0Column1.Location = new System.Drawing.Point(106, 75);
+            this.buttonRow0Column1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRow0Column1.Name = "buttonRow0Column1";
-            this.buttonRow0Column1.Size = new System.Drawing.Size(50, 50);
+            this.buttonRow0Column1.Size = new System.Drawing.Size(75, 75);
             this.buttonRow0Column1.TabIndex = 2;
             this.buttonRow0Column1.UseVisualStyleBackColor = true;
             this.buttonRow0Column1.Click += new System.EventHandler(this.TicTacToeSquareClick);
             // 
             // buttonRow0Column2
             // 
-            this.buttonRow0Column2.Location = new System.Drawing.Point(128, 50);
+            this.buttonRow0Column2.Location = new System.Drawing.Point(192, 75);
+            this.buttonRow0Column2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRow0Column2.Name = "buttonRow0Column2";
-            this.buttonRow0Column2.Size = new System.Drawing.Size(50, 50);
+            this.buttonRow0Column2.Size = new System.Drawing.Size(75, 75);
             this.buttonRow0Column2.TabIndex = 3;
             this.buttonRow0Column2.UseVisualStyleBackColor = true;
             this.buttonRow0Column2.Click += new System.EventHandler(this.TicTacToeSquareClick);
             // 
             // buttonRow1Column0
             // 
-            this.buttonRow1Column0.Location = new System.Drawing.Point(14, 106);
+            this.buttonRow1Column0.Location = new System.Drawing.Point(21, 159);
+            this.buttonRow1Column0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRow1Column0.Name = "buttonRow1Column0";
-            this.buttonRow1Column0.Size = new System.Drawing.Size(50, 50);
+            this.buttonRow1Column0.Size = new System.Drawing.Size(75, 75);
             this.buttonRow1Column0.TabIndex = 4;
             this.buttonRow1Column0.UseVisualStyleBackColor = true;
             this.buttonRow1Column0.Click += new System.EventHandler(this.TicTacToeSquareClick);
             // 
             // buttonRow1Column1
             // 
-            this.buttonRow1Column1.Location = new System.Drawing.Point(71, 106);
+            this.buttonRow1Column1.Location = new System.Drawing.Point(106, 159);
+            this.buttonRow1Column1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRow1Column1.Name = "buttonRow1Column1";
-            this.buttonRow1Column1.Size = new System.Drawing.Size(50, 50);
+            this.buttonRow1Column1.Size = new System.Drawing.Size(75, 75);
             this.buttonRow1Column1.TabIndex = 5;
             this.buttonRow1Column1.UseVisualStyleBackColor = true;
             this.buttonRow1Column1.Click += new System.EventHandler(this.TicTacToeSquareClick);
             // 
             // buttonRow1Column2
             // 
-            this.buttonRow1Column2.Location = new System.Drawing.Point(128, 106);
+            this.buttonRow1Column2.Location = new System.Drawing.Point(192, 159);
+            this.buttonRow1Column2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRow1Column2.Name = "buttonRow1Column2";
-            this.buttonRow1Column2.Size = new System.Drawing.Size(50, 50);
+            this.buttonRow1Column2.Size = new System.Drawing.Size(75, 75);
             this.buttonRow1Column2.TabIndex = 6;
             this.buttonRow1Column2.UseVisualStyleBackColor = true;
             this.buttonRow1Column2.Click += new System.EventHandler(this.TicTacToeSquareClick);
             // 
             // buttonRow2Column0
             // 
-            this.buttonRow2Column0.Location = new System.Drawing.Point(14, 162);
+            this.buttonRow2Column0.Location = new System.Drawing.Point(21, 243);
+            this.buttonRow2Column0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRow2Column0.Name = "buttonRow2Column0";
-            this.buttonRow2Column0.Size = new System.Drawing.Size(50, 50);
+            this.buttonRow2Column0.Size = new System.Drawing.Size(75, 75);
             this.buttonRow2Column0.TabIndex = 7;
             this.buttonRow2Column0.UseVisualStyleBackColor = true;
             this.buttonRow2Column0.Click += new System.EventHandler(this.TicTacToeSquareClick);
             // 
             // buttonRow2Column1
             // 
-            this.buttonRow2Column1.Location = new System.Drawing.Point(71, 162);
+            this.buttonRow2Column1.Location = new System.Drawing.Point(106, 243);
+            this.buttonRow2Column1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRow2Column1.Name = "buttonRow2Column1";
-            this.buttonRow2Column1.Size = new System.Drawing.Size(50, 50);
+            this.buttonRow2Column1.Size = new System.Drawing.Size(75, 75);
             this.buttonRow2Column1.TabIndex = 8;
             this.buttonRow2Column1.UseVisualStyleBackColor = true;
             this.buttonRow2Column1.Click += new System.EventHandler(this.TicTacToeSquareClick);
             // 
             // buttonRow2Column2
             // 
-            this.buttonRow2Column2.Location = new System.Drawing.Point(128, 162);
+            this.buttonRow2Column2.Location = new System.Drawing.Point(192, 243);
+            this.buttonRow2Column2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRow2Column2.Name = "buttonRow2Column2";
-            this.buttonRow2Column2.Size = new System.Drawing.Size(50, 50);
+            this.buttonRow2Column2.Size = new System.Drawing.Size(75, 75);
             this.buttonRow2Column2.TabIndex = 9;
             this.buttonRow2Column2.UseVisualStyleBackColor = true;
             this.buttonRow2Column2.Click += new System.EventHandler(this.TicTacToeSquareClick);
             // 
             // buttonReset
             // 
-            this.buttonReset.Location = new System.Drawing.Point(14, 228);
+            this.buttonReset.Location = new System.Drawing.Point(21, 342);
+            this.buttonReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(164, 28);
+            this.buttonReset.Size = new System.Drawing.Size(246, 42);
             this.buttonReset.TabIndex = 10;
             this.buttonReset.Text = "&Reset Game";
             this.buttonReset.UseVisualStyleBackColor = true;
@@ -145,10 +156,10 @@ namespace TicTacToe
             // formTicTacToe
             // 
             this.AcceptButton = this.buttonRow1Column1;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonReset;
-            this.ClientSize = new System.Drawing.Size(192, 283);
+            this.ClientSize = new System.Drawing.Size(312, 424);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonRow2Column2);
             this.Controls.Add(this.buttonRow2Column1);
@@ -160,6 +171,7 @@ namespace TicTacToe
             this.Controls.Add(this.buttonRow0Column1);
             this.Controls.Add(this.buttonRow0Column0);
             this.Controls.Add(this.labelGameStatus);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "formTicTacToe";

@@ -29,6 +29,8 @@ namespace TicTacToe
         bool isTurnX = true;
         // This boolean value represents the win condition.
         bool isWinner = false;
+        // This boolean value represents the tie condition
+        bool isTie = false;
         // Here's an array of buttons, representing the squares on the board.
         Button[,] squares;
 
@@ -78,12 +80,20 @@ namespace TicTacToe
             // Evaluate whether somebody won.
             EvaluateWin();
             
-            // Don't swap turns if somebody has won!
+            // Don't swap turns or check for a tie if somebody has won!
             if (!isWinner)
             {
-                // Swap turns.
-                ChangeTurn();
+                //Check for Tie
+                EvaluteTie();
+                // Don't swap turns if there is a tie
+                if (!isTie)
+                {
+                    // Swap turns.
+                    ChangeTurn();
+                }
+                
             }
+
 
             // Put the focus on the Reset button.
             buttonReset.Focus();
@@ -143,6 +153,8 @@ namespace TicTacToe
             SetControlsEnabled(squares, true);
             // Ensure that there is no winner.
             isWinner = false;
+            // Ensure that the game is not Tied
+            isTie = false;
             // ChangeTurn resets the status label and gives the loser the first turn.
             ChangeTurn();
         }
@@ -243,16 +255,16 @@ namespace TicTacToe
             // Do one of these for a +0.5 and two of them for a +1.
 
             // 1) If you want to get a little bit fancy...
-            // Make the winning line show up in a different colour!
+            // Make the winning line show up in a different colour! (Completed)
 
             // 2) If you want to get even fancier...
-            // Make this generate a relevant message when the game is a draw/tie game! (cat game?)
+            // Make this generate a relevant message when the game is a draw/tie game! (cat game?) (Complete)
 
             // 3) If you want to get *super* fancy...
             // Could you make a 4x4 board? Or a 5x5 board?
 
             // 4) If you like efficiency...
-            // How could you do everything in the EvaluateWin() function within a single loop?
+            // How could you do everything in the EvaluateWin() function within a single loop? (Completed)
 
             // 5) Holy crap you must want to make your life difficult for yourself if you pick this option:
             // Can you make it so that you can use arrow keys to move between the different squares in a natural way?
@@ -275,6 +287,31 @@ namespace TicTacToe
 
                 // Disable all squares to prevent further play.
                 SetControlsEnabled(squares, false);
+            }
+        }
+        
+        /// <summary>
+        /// Determines if there are no more moves and the game is tied.
+        /// </summary>
+        private void EvaluteTie()
+        {
+            isTie = true;
+            // Check all the squares
+            for (int index = 0; index <= squares.GetUpperBound(0); index++)
+            {
+                // If one sqaure is still empty the game is not tied
+                if (squares[index, 0].Text == String.Empty ||
+                    squares[index, 1].Text == String.Empty ||
+                    squares[index, 2].Text == String.Empty)
+                {
+                    isTie = false;
+                }
+            }
+
+            // If the game is tied show it
+            if (isTie)
+            {
+                labelGameStatus.Text = "Tie game.";
             }
         }
 
